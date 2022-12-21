@@ -11,17 +11,16 @@ def getMean (numbers):
 def getMedian(numbers):
     numbers.sort()
 
-    mid = len(numbers)/2
     
     if len(numbers)%2 == 0:
-        d = numbers[int(mid+1)] - numbers[int(mid)]
-        d = d/2
-        median = numbers[int(mid)]
-        median = median - d
+        mid = len(numbers)//2
+        previous = mid - 1
+        median = (numbers[mid] + numbers[previous])/2
+
         return median
       
     else:
-        return numbers[int(mid)]
+        return numbers[len(numbers)//2]
 
 def getMode(lst):
     uniquelst = []
