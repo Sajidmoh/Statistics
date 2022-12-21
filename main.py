@@ -23,6 +23,22 @@ def getMedian(numbers):
     else:
         return numbers[int(mid)]
 
+def getMode(lst):
+    uniquelst = []
+        
+    for i in range(len(lst)): 
+      if lst[i] not in uniquelst:
+        uniquelst.append(lst[i])
+
+    maxrep = 0
+    mode = uniquelst[0]
+    for i in uniquelst:
+        rep = lst.count(i)
+        if rep > maxrep:
+            maxrep = rep
+            mode = i    
+    return mode       
+
 #main program
 values = []#10/2 = 5 5+1=6 a[6] -a[5] = d a[5] + d 
 amount=int(input("How many numbers would you like to input "))
@@ -32,7 +48,7 @@ for i in range (amount):
 
 print("mean: ",getMean(values))
 print("Median: ",getMedian(values))
-
+print("mode: ", getMode(values))
 
 
   
