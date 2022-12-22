@@ -44,6 +44,24 @@ def getRange(numbers):
     range = numbers[-1] - numbers[0]
     return range
 
+def getMeanDeviation(numbers):
+    mean = getMean(numbers)
+    deviations = []
+    for i in range (len(numbers)):
+        deviation = abs(numbers[i] - mean)
+        deviations.append(deviation)
+    meanDeviation = getMean(deviations)
+    return meanDeviation
+
+def getMeanDeviationAboutMedian(numbers):
+    deviations = []
+    median = getMedian(numbers)
+    for i in range (len(numbers)):
+        deviation = abs(numbers[i] - median)
+        deviations.append(deviation)
+    meanDeviationAboutMedian = getMean(deviations)
+    return meanDeviationAboutMedian
+
 
 
 values = []#10/2 = 5 5+1=6 a[6] -a[5] = d a[5] + d 
@@ -58,5 +76,6 @@ print("mean: ",getMean(values))
 print("Median: ",getMedian(values))
 print("mode: ", getMode(values))
 print("Range: ", getRange(values))
-
+print("mean deviation: ",getMeanDeviation(values))
+print("mean deviation about median: ",getMeanDeviationAboutMedian(values))
   
