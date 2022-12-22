@@ -64,6 +64,20 @@ def getMeanDeviationAboutMedian(numbers):
 
 
 
+
+
+
+def getStandardDeviation(numbers):
+    mean  = getMean(numbers)
+    deviations = []
+    for i in range (len(numbers)):
+        deviation = (numbers[i] - mean)**2
+        deviations.append(deviation)
+    standardDeviation = (getMean(deviations))**0.5    
+    return standardDeviation
+
+
+
 values = []#10/2 = 5 5+1=6 a[6] -a[5] = d a[5] + d 
 amount=int(input("How many numbers would you like to input "))
 for i in range (amount):
@@ -78,4 +92,4 @@ print("mode: ", getMode(values))
 print("Range: ", getRange(values))
 print("mean deviation: ",getMeanDeviation(values))
 print("mean deviation about median: ",getMeanDeviationAboutMedian(values))
-  
+print("Standard deviation: ",getStandardDeviation(values))  
