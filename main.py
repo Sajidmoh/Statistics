@@ -39,15 +39,24 @@ def getMode(lst):
     return mode       
 
 #main program
+def getRange(numbers):
+    numbers.sort()
+    range = numbers[-1] - numbers[0]
+    return range
+
+
+
 values = []#10/2 = 5 5+1=6 a[6] -a[5] = d a[5] + d 
 amount=int(input("How many numbers would you like to input "))
 for i in range (amount):
     obs = int(input("enter number: "))
     values.append(obs)
 
+print("\nResults\n")
+
 print("mean: ",getMean(values))
 print("Median: ",getMedian(values))
 print("mode: ", getMode(values))
-
+print("Range: ", getRange(values))
 
   
